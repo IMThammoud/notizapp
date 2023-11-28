@@ -2,10 +2,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace NotizApp.Controllers;
 
+[Route("api/[controller]")]
+[ApiController]
 public class ReceiveNote : Controller
 {
     [HttpPost("ReceiveNote")]
-    public ContentResult receiveNoteAsString([FromForm] string note)
+    public IActionResult receiveNoteAsString([FromForm] string note)
     {
         // Store the note in a variable or save it to Database
         String storedNote = note;
